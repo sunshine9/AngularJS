@@ -163,6 +163,42 @@ currency 过滤器
     </script>
 ```
 
+##### AngularJS 表格
+```html
+<style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd)	{
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+
+    <div ng-app="myApp" ng-controller="customersCtrl">
+        <table>
+            <tr ng-repeat="x in names | orderBy:'Country'">
+                <td>{{ $index+1 }}</td> // 加序号
+                <td>{{ x.Name }}</td>
+                <td>{{ x.Country }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('customersCtrl', function ($scope, $http) {
+            $http.get("test.json").success(function (response) {
+                $scope.names = response.records;
+            })
+        });
+    </script>
+```
+
 
 
 
