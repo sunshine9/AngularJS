@@ -36,8 +36,22 @@ app.controller('myCtrl',function($scope){
 
 ##### AngularJs指令
 ```html
-// ng-app 初始化 
+// ng-app 初始化一个AngularJS应用程序
+// ng-init 初始化应用程序数据
+// ng-model 把元素值(如输入域的值)绑定到应用程序
+// ng-bind 绑定数据
+// {{}}数据绑定
+// ng-reapeat 重复HTML元素
+<div ng-app="" ng-init="names=['Jani','Hege','Kai']">
+    <p>使用 ng -repeat 来循环数组</p>
+    <ul>
+        <li ng-repeat="x in names">
+        {{ x }}
+    </ul>
+</div>
 ```
+
+
 
 
 
