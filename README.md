@@ -51,6 +51,18 @@ app.controller('myCtrl',function($scope){
 </div>
 ```
 
+##### AngularJS控制器
+```javascript
+var app = angular.moudle('myApp',[]);
+app.controller('personCtrl',function($scope){
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+    $scope.fullName = function(){
+        return $scope.firstName + " " +$scope.lastName; 
+    }
+})
+// 可在外部引用
+```
 
 
 
