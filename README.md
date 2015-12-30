@@ -199,6 +199,26 @@ table tr:nth-child(even) {
     </script>
 ```
 
+##### AngularJS SQL
+```html
+<div ng-app="myApp" ng-controller="sqlCtrl">
+        <table>
+            <tr ng-repeat="x in names">
+                <td>{{ x.Name }}</td>
+                <td>{{ x.City }}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('sqlCtrl', function ($scope, $http) {
+            $http.get("test.php").success(function (response) {
+                $scope.names = response.records;
+            });
+        })
+    </script>
+```
+
 
 
 
