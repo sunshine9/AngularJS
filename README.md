@@ -34,6 +34,10 @@ app.controller('myCtrl',function($scope){
 
 ```
 
+##### AngularJs指令
+```html
+// ng-app 初始化 
+```
 
 
 
