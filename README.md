@@ -64,6 +64,88 @@ app.controller('personCtrl',function($scope){
 // 可在外部引用
 ```
 
+##### AngularJS 过滤器
+```javascript
+    // curreny 格式化数字为货币格式
+    // filter 从数组项中选择一个子集
+    // lowercase 格式化字符串为小写
+    // orderBy 根据某个表达式排列数组
+    // uppercase 格式化字符串为大写
+```
+currency 过滤器
+```html
+    <div ng-app="myApp" ng-controller="costCtrl">
+        <input type="number" ng-model="quantity" />
+        <input type="number" ng-model="price" />
+        <p>总价 = {{ (quantity*price) | currency }}</p>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('costCtrl', function ($scope) {
+            $scope.quantity = 1;
+            $scope.price = 9.99;
+        });
+    </script>
+```
+向指令添加过滤器
+```html
+    <div ng-app="myApp" ng-controller="namesCtrl">
+        <p>循环对象</p>
+        <ul>
+            <li ng-repeat="x in names | orderBy:'city'">
+                {{ x.name +", " + x.city }}
+            </li>
+        </ul>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('namesCtrl', function ($scope) {
+            $scope.names = [
+            {
+                name: "zhangsan",
+                city: "ShangHai"
+            },
+            {
+                name: "LiSi",
+                city: "BeiJing"
+            }
+            ]
+        });
+    </script>
+```
+过滤输入
+```html
+<div ng-app="myApp" ng-controller="fliterCtrl">
+        <input type="text" ng-model="test" />
+        <ul>
+            <li ng-repeat="x in names | filter:test | orderBy:'city'">
+                {{ (x.name | uppercase) +", "+x.city }}
+            </li>
+        </ul>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('fliterCtrl', function ($scope) {
+            $scope.names = [{
+                name: "Wang",
+                city: "Chongqing"
+            },
+            {
+                name: "Hong",
+                city: "BeiJing"
+            },
+            {
+                name: "Sun",
+                city:"Guangzhou"
+            }
+            ]
+        })
+    </script>
+```
+
+
+
 
 
 
