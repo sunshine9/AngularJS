@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+        <script src="angular.min.js"></script>
+
+</head>
+<body>
+    <h2>实例1 ng-model ng-bind</h2>
+    <!--<div ng-app="">
+        <p>在输入框中输入：</p>
+        <p>姓名：<input type="text" ng-model="name" /></p>
+        <p ng-bind="name"></p>
+    </div>-->
+    <h2>我的第一个表达式</h2>
+    <!--<div ng-app="">
+        <p>我的第一个表达式：{{5+5}}</p>
+    </div>-->
+    <h2>我的第一个指令</h2>
+    <!--<div ng-app="" ng-init="firstName='John'">
+        <p>姓名为<span ng-bind="firstName"></span></p>
+    </div>-->
+    <h2>带有数字的表达式</h2>
+   <!-- <div ng-app="" ng-init="quantity='1';cost='29'">
+        <p>总价：{{quantity*cost}}</p>
+    </div>-->
+    <h2>带有数字的表达式ng-bind</h2>
+    <!--<div ng-app="" ng-init="quantity='38';cost='2'">
+        <p>总价：<span ng-bind="quantity*cost"></span>元</p>
+    </div>-->
+    <h2>带有字符串的表达式</h2>
+    <!--<div ng-app="" ng-init="firstName='John';lastName='Doe'">
+        <p>姓名{{firstName +" "+ lastName}}</p>
+        <p>姓名：<span ng-bind="firstName + ' ' + lastName"></span></p>
+    </div>-->
+    <h2>带有对象的表达式</h2>
+    <!--<div ng-app="" ng-init="person={firstName:'John',lastName:'Doe'}">
+        <p>姓名：{{person.firstName + " " + person.lastName}}</p>
+        <p>姓名：<span ng-bind="person.firstName + ' ' + person.lastName"></span></p>
+    </div>-->
+    <h2>带有数组的表达式</h2>
+    <!--<div ng-app="" ng-init="points=[1,8,52,36,95]">
+        <p>第三个值为:{{points[2]}}</p>
+        <p>第三个值为：<span ng-bind="points[2]"></span></p>
+    </div>-->
+    <h2>控制器</h2>
+    <!--<div ng-app="" ng-controller="personController">
+<br>
+姓名: {{person.firstName + " " + person.lastName}}
+
+</div>
+    <script>
+        function personController($scope) {
+            $scope.person = {
+                firstName: "John",
+                lastName: "Doe"
+            };
+        }
+    </script>-->
+    <h2>控制器属性</h2>
+    <!--<div ng-app="" ng-controller="personController">
+        名:<input type="text" ng-model="person.firstName" /><br />
+        姓：<input type="text" ng-model="person.lastName" /><br />
+        <p>姓名：{{person.firstName+ " " + person.lastName}}</p>
+        <p>姓名：{{person.fullName()}}</p>
+    </div>
+    <script>
+        function personController($scope) {
+            $scope.person = {
+                firstName: "John",
+                lastName: "Doe",
+                fullName: function () {
+                    var x = $scope.person;
+                    return x.firstName + " " + x.lastName;
+                }
+
+            }
+        }
+    </script>-->
+    <h2>模块</h2>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        {{firstName + " " lastName}}
+    </div>
+    <script src="//www.runoob.com/try/angularjs/1.2.5/angular.min.js"></script>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function ($scope) {
+            $scope.firstName = "John";
+            $scope.lastName = "Doe";
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

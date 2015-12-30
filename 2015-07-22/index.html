@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <h2>过滤输入</h2>
+   <!-- <div ng-app="" ng-controller="namesController">
+        <p><input type="text" ng-model="name" /></p>
+        <ul>
+            <li ng-repeat="x in names | filter:name | orderBy:'country'">{{x.name+ " "+ x.country}}</li>
+        </ul>
+    </div>
+    <script>
+        function namesController($scope) {
+            $scope.names = [
+                { name: "zhangsan", country: "China" },
+                { name: "LiSi", country: "BeiJing" },
+                {name:"xiaowang",country:"Paries"}
+            ]
+        }
+    </script>-->
+    <h2>AngularJS $http是一个用于读取web服务器上数据的服务</h2>
+    <h2>$http.get(url)用于读取服务器数据的函数</h2>
+    <!--<div ng-app="" ng-controller="customersController">
+        <ul>
+            <li ng-repeat="x in names">
+                {{ x.Name + "," +x.Country}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        function customersController($scope, $http) {
+            $http.get("http://www.runoob.com/try/angularjs/data/Customers_JSON.php")
+    .success(function (response) { $scope.names = response;})
+        }
+    </script>-->
+
+    <h2>AngularJS 表格</h2>
+   <!-- <div ng-app="" ng-controller="customerController">
+        <table>
+            <tr ng-repeat="x in names">
+                <td>{{x.Name}}</td>
+                <td>{{x.Country}}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function customerController($scope, $http) {
+            $http.get("http://www.runoob.com/try/angularjs/data/Customers_JSON.php")
+            .success(function (response) { $scope.names = response;})
+        }
+    </script>-->
+
+    <h2>AngularJS HTML DOM</h2>
+    <h2>ng-disabled</h2>
+    <!--<div ng-app="">
+        <p><button ng-disabled="mySwitch">点我！</button></p>
+        <p><input type="checkbox" ng-model="mySwitch" />按钮</p>
+    </div>-->
+    <h2>AngularJs HTML事件</h2>
+    <!--<div ng-app="" ng-controller="myController">
+        <button ng-click="count=count+1">点我！</button>
+        <p>{{count}}</p>
+    </div>
+    <script>
+        function myController($scope) {
+            $scope.count = 0;
+        }
+    </script>-->
+    <!--<div ng-app="" ng-controller="personController">
+        <button ng-click="toggle()">显示/隐藏</button>
+        <p ng-hide="myVar">
+            名：<input type="text" ng-model="person.firstName" /><br />
+            姓：<input type="text" ng-model="person.lastName" /><br />
+            姓名：{{person.firstName+ " " + person.lastName}};
+        </p>
+    </div>
+    <script>
+        function personController($scope) {
+            $scope.person = {
+                firstName: "John",
+                lastName: "Doe"
+            };
+            $scope.myVar = true;
+            $scope.toggle = function () {
+                $scope.myVar = !$scope.myVar;
+            }
+        }
+    </script>-->
+    <h2>一个简单的控制器</h2>
+    <!--<div ng-app="" ng-controller="myCtrl">
+        {{firstName+ " " + lastName}}
+    </div>
+    <script>
+        function myCtrl($scope) {
+            $scope.firstName = "John";
+            $scope.lastName = "Doe";
+        }
+    </script>-->
+    <h2>用模块代替控制器</h2>
+   <!-- <div ng-app="myApp" ng-controller="myCtrl">
+        {{firstName+ " "+ lastName }}
+    </div>
+    <script>
+        var app = angular.moudle("myApp", []);
+
+        app.controller("myCtrl", function ($scope) {
+            $scope.firstName = "John";
+            $scope.lastName = "Doe";
+        })
+    </script>-->
+ 
+
+
+
+    <script src="http://apps.bdimg.com/libs/angular.js/1.2.15/angular.min.js"></script>
+</body>
+</html>

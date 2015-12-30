@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+
+   <!-- <div ng-app="">
+        <p>在输入框中尝试输入:</p>
+        <p>姓名：<input type="text" ng-model="name" /></p>
+        <p ng-bind="name"></p>
+    </div>-->
+
+    <!-- AngularJS 表达式 使用表达式把数据绑定到html -->
+    <!--<h2>数字</h2>
+    <div ng-app="" ng-init="quantity=1;cost=5">
+        <p>总价：{{quantity * cost}}</p>
+    </div>
+    <div ng-app="" ng-init="quantity=1;cost=5">
+        <p>总价：<span ng-bind="quantity*cost"></span></p
+    </div>-->
+
+    <h2>字符串</h2>
+    <!--<div ng-app="" ng-init="firstName='John';lastName='Doe'">
+        <p>姓名：{{firstName+" "+lastName}}</p>
+    </div>
+    <div ng-app="" ng-init="firstName='John'; lastName='Doe'">
+        <p>姓名：<span ng-bind="firstName+' '+lastName"></span></p>
+    </div>-->
+    <h2>对象</h2>
+   <!-- <div ng-app="" ng-init="person={firstName:'John',lastName:'Doe'}">
+        <p>姓名：{{person.lastName}}</p>
+    </div>
+    <div ng-app="" ng-init="person={firstName:'John',lastName:'Doe'}">
+        <p>姓名：<span ng-bind="person.lastName"></span></p>
+    </div>-->
+
+    <h2>数组</h2>
+   <!-- <div ng-app="" ng-init="points=[1,5,9]">
+        <p>第二个数为：{{points[1]}}</p>
+    </div>
+    <div ng-app="" ng-init="points=[1,5,9]">
+        <p>第二个数为：<span ng-bind="points[2]"></span></p>
+    </div>-->
+
+    <h2>AngularJS指令</h2>
+  <!-- <div ng-app="" ng-init="firstName='John'">
+       <p>在输入框中尝试输入：</p>
+       <p>姓名：<input type="text" ng-model="firstName"</p>
+       <p>你输入的为：{{firstName}}</p>
+       <p><span ng-bind="firstName"></span></p>
+   </div>-->
+
+    <h2>价格计算器</h2>
+    <!--<div ng-app="" ng-init="quantity=1; price=5">
+        <input type="number" ng-model="quantity" />
+        <input type="number" ng-model="price" />
+        <p>总价：{{quantity * price}}</p>
+    </div>-->
+    <h2>重复HTML元素</h2>
+    <!--<div ng-app="" ng-init="names=['Jani','Hege','Kai']">
+        <ul>
+            <li ng-repeat="x in names">{{x}}</li>
+        </ul>
+    </div>-->
+    <h2>ng-repeat用在对象数组上</h2>
+   <!-- <div ng-app="" ng-init="names=[
+        {name:'Jani',country:'Norway2'},
+        {name:'zhangsan',country:'China'},
+        {name:'Kai',country:'Sweden'}
+        ]">
+        <ul>
+            <li ng-repeat="x in names">{{x.name+" from "+x.country}}</li>
+        </ul>
+    </div>-->
+    <h2>控制器</h2>
+    <!--<div ng-app="" ng-controller="personController">
+        名：<input type="text" ng-model="person.firstName" />
+        姓:<input type="text" ng-model="person.lastName">
+        <br />
+        姓名：{{person.firstName+" " +person.lastName}}
+    </div>
+    <script>
+        function personController($scope) {
+            $scope.person = {
+                firstName: "John",
+                lastName:"Doe"
+            }
+        }
+    </script>-->
+    <h2>控制器函数</h2>
+    <!--<div ng-app="" ng-controller="personController">
+        名：<input type="text" ng-model="person.firstName" /><br />
+        姓：<input type="text" ng-model="person.lastName" /><br />
+        姓名：{{person.fullName()}}
+    </div>
+    <script>
+        function personController($scope) {
+            $scope.person = {
+                firstName: "John",
+                lastName: 'Doe',
+                fullName: function () {
+                    var x;
+                    x = $scope.person;
+                    return x.firstName + " " + x.lastName;
+                }
+            }
+        }
+    </script>-->
+    <h2>控制器带有方法</h2>
+    <!--<div ng-app="" ng-controller="personContronller">
+        名：<input type="text" ng-model="person.firstName" /><br />
+        姓：<input type="text" ng-model="person.lastName" /><br />
+        姓名：{{fullName()}}
+    </div>
+    <script>
+        function personContronller($scope) {
+            $scope.person = {
+                firstName: "John",
+                lastName: "Doe",
+            };
+            $scope.fullName = function () {
+                var x;
+                x = $scope.person;
+                return x.firstName + " " + x.lastName;
+            }
+        }
+    </script>-->
+
+     <h2>过滤器</h2>
+    <!--<div ng-app="" ng-controller="personContronller">
+        名：<input type="text" ng-model="person.firstName" /><br />
+        姓：<input type="text" ng-model="person.lastName" /><br />
+        姓名：{{person.lastName | uppercase}}    
+        姓名：{{person.lastName | lowercase}}
+    </div>
+    <script>
+        function personContronller($scope) {
+            $scope.person = {
+                firstName: "John",
+                lastName: "Doe",
+            };
+            $scope.fullName = function () {
+                var x;
+                x = $scope.person;
+                return x.firstName + " " + x.lastName;
+            }
+        }
+    </script>-->
+    <!--<div ng-app="" ng-controller="costController">
+        数量：<input type="number" ng-model="quantity" />
+        价格：<input type="number" ng-model="price" />
+        <p>总价={{quantity*price | currency}}</p>
+    </div>
+    <script>
+        function costController($scope) {
+            $scope.quantity = 1;
+            $scope.price = 9.99;
+        }
+    </script>-->
+    <!--<div ng-app="" ng-controller="namesController">
+        <p>循环对象：</p>
+        <ul>
+            <li ng-repeat="x in names | orderBy:'country'">
+                {{x.name + "from"+x.country}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        function namesController($scope) {
+            $scope.names = [{ name: "zhangsan", country: "f" },
+                      { name: "wangsi", country: "b" },
+                      {name:"df",country:"e"}
+            ]
+        }
+    </script>-->
+    <div ng-app="" ng-controller="namesController">
+        <p><input type="text" ng-model="name" /></p>
+        <ul>
+            <li ng-repeat="x in names | filter:name | orderBy:'country'"></li>
+            {{(x.name | uppercase) +" from "+x.country}}
+        </ul>
+    </div>
+    <script>
+        function namesController($scope) {
+            $scope.names = [{ name: "1123", country: "678" },
+                { name: "234", country: "789" },
+                {name:"345",country:"89"}
+            ]
+        }
+    </script>
+
+
+
+
+        <script src="//www.runoob.com/try/angularjs/1.2.5/angular.min.js"></script>
+</body>
+</html>
