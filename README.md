@@ -144,6 +144,25 @@ currency 过滤器
     </script>
 ```
 
+##### AngularJS http(xmlHttpRequest Ajax)
+```javascript
+    <div ng-app="myApp" ng-controller="customersCtrl">
+        <ul>
+            <li ng-repeat="x in names">
+                {{ x.Name+", "+x.City+", "+x.Country }}
+            </li>
+        </ul>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('customersCtrl', function ($scope, $http) {
+            $http.get("test.json").success(function (response) {
+                $scope.names = response.records;
+            });
+        });
+    </script>
+```
+
 
 
 
