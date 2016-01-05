@@ -219,6 +219,38 @@ table tr:nth-child(even) {
     </script>
 ```
 
+#### AngularJS HTML DOM
+
+ng-disabled 指令
+```html
+<div ng-app="" ng-init="mySwitch=true">
+    <p>
+        <button ng-disabled="mySwitch">点击！</button>
+    </p>
+    <p>
+        <input type="checkbox" ng-model="mySwitch" />按钮
+    </p>
+</div>
+```
+
+ng-show 指令
+```html
+<div ng-app="">
+    <p ng-show="true">我是可见的</p>
+    <p ng-show="false">我是不可见的</p>
+</div>
+```
+
+ng-show 根据value值来隐藏或显示一个HTML元素
+```html
+<div ng-app="13">
+    <p ng-show="hour > 12">我是可见的。<p>
+</div>
+```
+
+
+
+
 
 
 
