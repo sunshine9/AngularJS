@@ -256,6 +256,114 @@ ng-hide 指令
 </div>
 ```
 
+#### AngularJS 事件
+
+ng-click 指令
+```html
+<div ng-app="myApp" ng-controller="myCtrl">
+    <button ng-click="count = count +１"＞点我！</button>
+    <p{{ count }}</p>
+</div>
+<script>
+var app = angular.module('myApp',[]);
+app.controller('myCtrl',function($scope){
+    $scope.count = 0;
+});
+</script>
+```
+
+隐藏指令
+```html
+<div ng-app = "myApp" ng-controller = "personCtrl">
+    <button ng-click = "toggle()">显示/隐藏</button>
+    <p ng-hide = "myWar">
+        名： <input type = "text" ng-model = "firstName"><br>
+        姓： <input type = "text" ng-model = "lastName"><br>
+        姓名： {{ firstName + " " + lastName }}
+    </p>
+</div>
+<script>
+var app = angular.module("myApp",[]);
+app.controller("personCtrl", function($scope){
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+    $scope.myVar = false;
+    $scope.toggle = function(){
+        $scope.myVar = !$scope.myVar;
+    }
+})
+</script>
+```
+
+显示指令
+```html
+<div ng-app = "myApp" ng-controller = "personCtrl">
+    <button ng-click = "toggle()">显示/隐藏</button>
+    <p ng-show = "myWar">
+        名： <input type = "text" ng-model = "firstName"><br>
+        姓： <input type = "text" ng-model = "lastName"><br>
+        姓名： {{ firstName + " " + lastName }}
+    </p>
+</div>
+<script>
+var app = angular.module("myApp",[]);
+app.controller("personCtrl", function($scope){
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+    $scope.myVar = true;
+    $scope.toggle = function(){
+        $scope.myVar = !$scope.myVar;
+    }
+});
+</script>
+```
+
+#### AngularJS模块
+模块定义了一个应用程序<br>
+模块是应用程序中不同部分的容器<br>
+
+带有控制器的模块
+```html
+<div ng-app = "myApp" ng-controller = "myCtrl">
+{{ firstName + "" +lastName }}
+</div>
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope){
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+});
+</script>
+```
+模块和控制器也可以包含在JS文件中<br>
+AngularJs库是在文档的<head>区域被加载
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
