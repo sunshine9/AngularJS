@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+    
+   
+    <!--<div ng-app="myApp" ng-controller="costCtrl">
+        <input type="number" ng-model="quantity" />
+        <input type="number" ng-model="price" />
+        <p>总价 = {{ (quantity*price) | currency }}</p>
+    </div>
+
+    <script>
+        // curreny 格式化数字为货币格式
+        // filter 从数组项中选择一个子集
+        // lowercase 格式化字符串为小写
+        // orderBy 根据某个表达式排列数组
+        // uppercase 格式化字符串为大写
+        var app = angular.module('myApp', []);
+        app.controller('costCtrl', function ($scope) {
+            $scope.quantity = 1;
+            $scope.price = 9.99;
+        });
+    </script>
+
+    <div ng-app="myApp" ng-controller="namesCtrl">
+        <p>循环对象</p>
+        <ul>
+            <li ng-repeat="x in names | orderBy:'city'">
+                {{ x.name +", " + x.city }}
+            </li>
+        </ul>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('namesCtrl', function ($scope) {
+            $scope.names = [
+            {
+                name: "zhangsan",
+                city: "ShangHai"
+            },
+            {
+                name: "LiSi",
+                city: "BeiJing"
+            }
+            ]
+        });
+    </script>
+
+    <div ng-app="myApp" ng-controller="fliterCtrl">
+        <input type="text" ng-model="test" />
+        <ul>
+            <li ng-repeat="x in names | filter:test | orderBy:'city'">
+                {{ (x.name | uppercase) +", "+x.city }}
+            </li>
+        </ul>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('fliterCtrl', function ($scope) {
+            $scope.names = [{
+                name: "Wang",
+                city: "Chongqing"
+            },
+            {
+                name: "Hong",
+                city: "BeiJing"
+            },
+            {
+                name: "Sun",
+                city:"Guangzhou"
+            }
+            ]
+        })
+    </script>-->
+
+    <!--<div ng-app="myApp" ng-controller="customersCtrl">
+        <ul>
+            <li ng-repeat="x in names">
+                {{ x.Name+", "+x.City+", "+x.Country }}
+            </li>
+        </ul>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('customersCtrl', function ($scope, $http) {
+            $http.get("test.json").success(function (response) {
+                $scope.names = response.records;
+            });
+        });
+    </script>-->
+
+    <!--<style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd)	{
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+
+    <div ng-app="myApp" ng-controller="customersCtrl">
+        <table>
+            <tr ng-repeat="x in names | orderBy:'Country'">
+                <td>{{ $index+1 }}</td>
+                <td>{{ x.Name }}</td>
+                <td>{{ x.Country }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('customersCtrl', function ($scope, $http) {
+            $http.get("test.json").success(function (response) {
+                $scope.names = response.records;
+            })
+        });
+    </script>-->
+
+    <div ng-app="myApp" ng-controller="sqlCtrl">
+        <table>
+            <tr ng-repeat="x in names">
+                <td>{{ x.Name }}</td>
+                <td>{{ x.City }}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('sqlCtrl', function ($scope, $http) {
+            $http.get("test.php").success(function (response) {
+                $scope.names = response.records;
+            });
+        })
+    </script>
+
+
+
+
+
+
+</body>
+</html>
